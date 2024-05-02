@@ -6,7 +6,10 @@ import (
 )
 
 type Person struct {
+	// Get the name of the person.
 	Name string
+
+	// +private
 	Job  string
 
 	// +private
@@ -21,7 +24,7 @@ func New(name string, job string, age int) *Person {
 	}
 }
 
-// Get the identity of the person based on its personal information.
+// Get the identity of the person based on their personal information.
 func (p *Person) Identity() string {
 	str := fmt.Sprintf("%s-%s-%d", p.Name, p.Job, p.Age)
 	return fmt.Sprintf("%x", sha256.Sum256([]byte(str)))
