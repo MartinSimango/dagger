@@ -6,7 +6,9 @@ import (
 )
 
 type Person struct {
+	// Get the name of the person
 	Name string
+	// +private
 	Job  string
 
 	// +private
